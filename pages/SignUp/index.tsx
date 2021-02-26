@@ -10,7 +10,7 @@ import { Link, Redirect } from 'react-router-dom';
 
 const SignUp = () => {
 
-  // const { data, error, revalidate } = useSWR('http://localhost:3095/api/users', fetcher);
+  // const { data, error, revalidate } = useSWR('/api/users', fetcher);
 
   const [email, onChangeEmail] = useInput('');
   const [nickname, onChangeNickname] = useInput('');
@@ -45,6 +45,7 @@ const SignUp = () => {
         setSignUpSuccess(false);
         axios
           .post('/api/users', {
+          // .post('/api/users', {
             email,
             nickname,
             password,
